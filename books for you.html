@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book For You</title>
+    <style>
+       body  {
+            font-family: Arial, sans-serif;
+            background-color: #5b4e4e;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .collection-container {
+           background-color: #775555;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            max-height: 90vh; 
+            overflow-y: auto; 
+            text-align: center;
+            color: white;
+        }
+
+        .collection-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-gap: 20px;
+            margin-top: 20px;
+        }
+        .book-card {
+            border: 1px solid #a8a0a0;
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .book-card img {
+            width: 100px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .book-item {
+            margin-bottom: 10px;
+        }
+        .search-bar {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .search-input {
+            width: 90%;
+            padding: 8px;
+            border: 1px solid #181616;
+            border-radius: 3px;
+            font-size: 16px; 
+        }
+        .book-card strong {
+        font-size: 20px; 
+    }
+
+    .book-card span {
+        font-size: 16px; 
+    }
+    </style>
+</head>
+<body>
+    <div class="book-card" draggable="true" ondragstart="dragStart(event)">
+        <div class="collection-container">
+            <h1 class="collection-title">Book Collection</h1>
+    
+        <h2>Books For You to Exchange</h2>
+
+   
+    <div class="book-grid">
+
+        <div class="book-card">
+        <img src="http://localhost/bookexchange/palpasacafe_.jpg" alt="Book Cover">
+        <p>This is a book that we recommend for you.</p>
+        <p>Genre: Novel</p>
+        <p>Author: Narayan Wagle</p>
+        <p>Published: 2005</p>
+        <button class="add-to-cart-button" onclick="addToCart('')"></button>
+        
+       
+    </div>
+
+        <div class="book-card">
+            <img src="http://localhost/bookexchange/siris%20ko%20phul.jpeg" alt="Book Cover">
+            <p>This is a book that we recommend for you.</p>
+            <p>Author: Parijat</p>
+            <p>Genre: Novel</p>
+            <p>Published: 1964 </p>
+            <button class="add-to-cart-button" onclick="addToCart('')"></button>
+    </div>
+
+            <div class="book-card">
+                <img src="http://localhost/bookexchange/china%20harayeko%20manxe.jpeg" alt="Book Cover">
+                <p>This is a book that we recommend for you.</p>
+                <p>Author:Hari Bansha Acharya</p>
+                <p>Genre: Autobiography</p>
+                <p>Published: April 2013</p>
+                <button class="add-to-cart-button" onclick="addToCart('')"></button>
+            </div>
+
+
+        
+
+              
+                </div>
+                <a href="http://localhost/bookexchange/signup.php" style="color: rgb(171, 189, 255); font-size: 19px;"><b>Signup for more</b></a>
+
+
+
+             <script>
+                function addToCart(bookTitle) {
+              
+               alert("please sign in first to add to cart!!");
+           }
+               function searchBooks() {
+                   var input = document.getElementById("searchInput").value.toLowerCase();
+                   var bookList = document.getElementById("bookList");
+                   var books = bookList.getElementsByClassName("book-item");
+       
+                   for (var i = 0; i < books.length; i++) {
+                       var title = books[i].querySelector("strong:nth-child(1)").textContent.toLowerCase();
+                       if (title.includes(input)) {
+                           books[i].style.display = "";
+                       } else {
+                           books[i].style.display = "none";
+                       }
+                   }
+               }
+       
+           </script>
+</body>
+</html>

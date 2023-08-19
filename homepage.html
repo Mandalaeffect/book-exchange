@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Collection</title>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://img.freepik.com/free-photo/education-college-read-information-table_1150-1615.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .collection-container {
+           background-color: #0e0d0d;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            max-height: 90vh; 
+            overflow-y: auto; 
+            text-align: center;
+            color: white;
+        }
+
+        .add
+        .collection-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-gap: 20px;
+            margin-top: 20px;
+        }
+        .book-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .book-card img {
+            width: 100px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .book-item {
+            margin-bottom: 10px;
+        }
+        .search-bar {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .search-input {
+            width: 90%;
+            padding: 8px;
+            border: 1px solid #181616;
+            border-radius: 3px;
+            font-size: 16px; 
+        }
+        .search-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            padding: 8px 15px;
+            margin-left: 10px;
+            font-size: 16px
+        }
+        .book-card strong {
+        font-size: 20px; 
+    }
+
+    .book-card span {
+        font-size: 16px; 
+    }
+
+    .add-to-cart-button {
+        font-size: 14px; 
+    }
+    </style>
+</head>
+<body>
+    
+    
+    <div class="book-card" draggable="true" ondragstart="dragStart(event)">
+    <div class="collection-container">
+        <h1 class="collection-title">Book Collection</h1>
+        <div class="search-bar">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search books">
+            <button class="search-button" onclick="searchBooks()">Search</button>
+           
+            
+        </div>
+        <div class="categories">
+            <button class="category">English</button>
+            <button class="category">Hindi</button>
+            <button class="category">Nepali</button>
+            <button class="category">Manga</button>
+        </div>
+        <div class="book-grid">
+            <div class="book-card">
+                <img src="http://localhost/bookexchange/1603897585-image12-1.jpg" alt="Book Cover 1">
+                <strong>The Lord of the Rings</strong>
+                <span>J. R. R. Tolkien.</span>
+                <span>Language: English</span>
+                <span>Price: Rs.2,690</span>
+                <button class="add-to-cart-button" onclick="addToCart('The Lord of the Rings')"></button>
+            </div>
+            <div class="book-card">
+                <img src="http://localhost/bookexchange/Muna_Madan_-_book_cover.jpg" alt="Book Cover 2">
+                <strong>Muna Madan</strong>
+                <span>Laxmi Prasad Devkota</span>
+                <span>Language: Nepali</span>
+                <span>Price: Rs75</span>
+                <button class="add-to-cart-button" onclick="addToCart('Muna Madan')"></button>
+            </div>
+            <div class="book-card">
+                <img src="http://localhost/bookexchange/3292-2021-09-09.jpg" alt="Book Cover 1">
+                <strong>Atomic Habits</strong>
+                <span>A James Clear</span>
+                <span>Language: English</span>
+                <span>Price=Rs. 1,280</span>
+                <button class="add-to-cart-button" onclick="addToCart('Atomic Habits')"></button>
+            </div>
+            <div class="book-card">
+                <img src="http://localhost/bookexchange/Jeevan%20+%20Kada%20+%20Ki%20+%20Phool.jpg" alt="Book Cover 1">
+                <strong>Jiwan Kada Ki Phool</strong>
+                <span>Jhamak Ghimire </span>
+                <span>Language:Nepali</span>
+                <span>Price:Rs. 425</span>
+                <button class="add-to-cart-button" onclick="addToCart('Jiwan Kada Ki Phoola')"></button>
+            </div>
+            <div class="book-card">
+                <img src="http://localhost/bookexchange/ced0146258dd1eabdce9792d50103e6a%20-%20Copy.jpg" alt="Book Cover 1">
+                <strong>Rich Dad Poor Dad</strong>
+                <span>Robert Kiyosaki and Sharon Lechter
+                </span>
+                <span>Price: Rs. 640</span>
+                <span>Language: English</span>
+                <button class="add-to-cart-button" onclick="addToCart('Rich Dad Poor Dad')"></button>
+            </div>
+            <div class="book-card">
+                <img src="http://localhost/bookexchange/I%20Was%20Only%20Nineteen.jpg" alt="Book Cover 1">
+                <strong>I Was Only Nineteen</strong>
+                <span>John Schumann</span>
+                <span>Price:  $15.29</span>
+                <span>Language: English</span>
+                <button class="add-to-cart-button" onclick="addToCart('I Was Only Nineteen')"></button>
+            </div>
+            <div class="book-card">
+                <img src="http://localhost/bookexchange/best-historical-books-alexander-hamilton-1600137689.jpg" alt="Book Cover 1">
+                <strong>Alexander Hamilton</strong>
+                <span>Alexander Hamilton</span>
+                <span>Price:  $15.29</span>
+                <button class="add-to-cart-button" onclick="addToCart('Alexander Hamilton')"></button>
+            </div>
+            <div class="book-card">
+                <img src="http://localhost/bookexchange/burning-sky-666x1024.jpg" alt="Book Cover 1">
+                <strong>The Burning Sky</strong>
+                <span> Sherry Thomas
+                </span>
+                <span>Price:  $9.99 </span>
+                <span>Language: English</span>
+                <button class="add-to-cart-button" onclick="addToCart('The Burning Sky')"></button>
+            </div>
+            <div class="book-card" >
+                <img src="http://localhost/bookexchange/download.jpg" alt="Book Cover 1">
+                <strong>Charlie and the Chocolate Factory</strong>
+                <span>Roald Dahl </span>
+                <span>Price: Rs 576.00 </span>
+                <span>Language: English</span>
+                <button class="add-to-cart-button" onclick="addToCart('Charlie and the Chocolate Factory')"></button>
+
+            </div>
+            <div class="book-card">
+                <img src="http://localhost/bookexchange/tumblr_inline_o2rngvVXWj1rpcdyn_1280.jpeg" alt="Book Cover 1">
+                <strong> One piece</strong>
+                <span>Price: $8.54 </span>
+                <span>Eiichiro Oda </span>
+                <span>Language: English</span>
+                <button class="add-to-cart-button" onclick="addToCart(' One piece')"></button>
+                </div>
+    
+            
+            <div class="book-card">
+                <img src=" http://localhost/bookexchange/dragon-ball-z-vol-22-9781421500515_hr.jpg" alt="Book Cover 1">
+                <strong>Dragonball Z</strong>
+                <span>Price: $9.99 </span>
+                <span>Akira Toriyama</span>
+                <span>Language: English</span>
+                <button class="add-to-cart-button" onclick="addToCart('Dragonball Z')"></button>
+            </div>
+            <div class="book-card">
+                <img src=" http://localhost/bookexchange/download.jpeg" alt="Book Cover 1">
+                <strong>Naruto</strong>
+                <span>Price: Rs. 1,118 </span>
+                <span>Masashi Kishimoto </span>
+                <span>Language: English</span>
+                <button class="add-to-cart-button" onclick="addToCart('Naruto')"></button>
+            </div>
+           <div class="book-card">
+                <img src="http://localhost/bookexchange/63ce96136111625932f2f2c7829c77b1.png" alt="Book Cover 1">
+                <strong>Bleach</strong>
+                <span>Price: $103.91  </span>
+                <span>Tite Kubo </span>
+                <span>Language: English</span>
+                <button class="add-to-cart-button" onclick="addToCart('Bleach')"></button>
+            </div>
+            
+            <div class="book-card">
+                <img src="http://localhost/bookexchange/3053563-cvr9781421518886_9781421518886_hr.jpg" alt="Book Cover 1">
+                <strong>Deathnote</strong>
+                <span>Price: $35.86  </span>
+                <span>Tsugumi Ohba , Takeshi Obata </span>
+                <span>Language: English</span>
+                <button class="add-to-cart-button" onclick="addToCart('Deathnote')"></button>
+            </div>
+
+            <div class="book-card">
+                <img src="http://localhost/bookexchange/demon-slayer-kimetsu-no-yaiba-vol-1-9781974700523_hr.jpg" alt="Book Cover 1">
+                <strong>Demon-slayer</strong>
+                <span>Price: Rs. 1,299 </span>
+                <span>Koyoharu Gotouge </span>
+                <span>Language: English</span>
+                <button class="add-to-cart-button" onclick="addToCart('Demon-slayer')"></button>
+            </div>
+           
+            
+
+    </div>
+    <a href="http://localhost/bookexchange/addtocart.php"style="color: rgb(171, 189, 255);font-size: 19px;"><p>Click here to add books</p></a>
+   
+
+    <script>
+         function addToCart(bookTitle) {
+       
+        alert("Added to cart: " + bookTitle);
+    }
+        function searchBooks() {
+            var input = document.getElementById("searchInput").value.toLowerCase();
+            var bookList = document.getElementById("bookList");
+            var books = bookList.getElementsByClassName("book-item");
+
+            for (var i = 0; i < books.length; i++) {
+                var title = books[i].querySelector("strong:nth-child(1)").textContent.toLowerCase();
+                if (title.includes(input)) {
+                    books[i].style.display = "";
+                } else {
+                    books[i].style.display = "none";
+                }
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

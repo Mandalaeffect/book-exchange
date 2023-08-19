@@ -1,0 +1,150 @@
+/* Reset some default margin and padding */
+body, h1, h2, p {
+  background-image: url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicmFyeXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80);
+    margin: 0;
+    padding: 0;
+    
+  }
+  body, h1, h2, p, a {
+    font-size: 18px;
+  }
+  
+  /* Style for header navigation */
+  .nav-menu li.dropdown {
+    position: relative;
+  }
+
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000000;
+    border: 1px solid  #000000;
+  }
+
+  .nav-menu li.dropdown:hover .submenu {
+    display: block;
+  }
+  .submenu li {
+    padding: 10px;
+  }
+  nav {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .nav-menu {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-menu li {
+    margin-right: 20px;
+  }
+  
+  .nav-menu a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Style for hero section */
+  .hero {
+    background-image: url("hero-background.jpg");
+    background-size: cover;
+    color: whitesmoke;
+    text-align: center;
+    padding: 5rem 0;
+  }
+  
+  .hero h1 {
+   
+    font-size: 4rem; /* Increased font size */
+    margin-bottom: 1rem;
+  }
+  
+  .cta-button {
+    background-color: #f39c12;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem
+  }
+  
+  /* Style for browse books section */
+  
+  
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  
+  .book-grid img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  
+  /* Style for footer */
+  footer {
+    background-color: #121212;
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .footer-nav ul {
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-nav a {
+    color: #c46c2e;
+    text-decoration: none;
+    margin-right: 15px;
+  }
+  
+  .social-icons {
+    margin-bottom: 1rem;
+  }
+  
+  .social-icons a {
+    margin-right: 10px;
+  }
+  
+  /* Center align footer text */
+  footer p {
+    text-align: center;
+  }
+  
+  /* ... (Previous CSS code) ... */
+
+.browse-books {
+  color: whitesmoke;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.categories {
+  margin-bottom: 20px;
+}
+
+.category {
+
+  background-color: #9fd2f4;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.category:hover {
+  background-color: #2980b9;
+}
